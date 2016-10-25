@@ -6,4 +6,9 @@ import { Auth } from '../../services/auth.service';
     selector: 'profile',
     templateUrl: 'profile.component.html'
 })
-export class ProfileComponent { }
+export class ProfileComponent {
+    profile: any;
+    constructor(private auth:Auth) {
+        this.profile = JSON.parse(localStorage.getItem('profile'));
+    }
+ }
